@@ -1,0 +1,63 @@
+interface Animal {
+    void sound();
+    default void sleep() {
+        System.out.println("Zwirzak idzie spać.");
+    }
+    static void endOfDay() {
+        System.out.println("Koniec dnia, zwirzoki idą spać");
+    }
+    default void eat() {
+        System.out.println("Zwierzaki idą jeść");
+    }
+}
+
+class Dog implements Animal {
+    public void sound() {
+        System.out.println("HAŁ HAŁ");
+    }
+}
+
+class Cat implements Animal {
+    public void sound() {
+        System.out.println("Miał MIAŁ");
+    }
+}
+class Krowa implements Animal {
+    public void sound() {
+        System.out.println("Muuuuuu");
+    }
+}
+
+class Ptak implements Animal {
+    public void sound() {
+        System.out.println("Ćwir Ćwir");
+    }
+}
+
+public class Application {
+    public static void main(String[] args){
+        Animal dog = new Dog();
+        Animal cat = new Cat();
+        Animal Krowa = new Krowa();
+        Animal Ptak = new Ptak();
+        
+        dog.sound();
+        dog.eat();
+        dog.sleep();
+        
+        
+        cat.sound();
+        cat.eat();
+        cat.sleep();
+        
+        Krowa.sound();
+        Krowa.eat();
+        Krowa.sleep();
+        
+        Ptak.sound();
+        Ptak.eat();
+        Ptak.sleep();
+        
+        Animal.endOfDay();
+    }
+}
